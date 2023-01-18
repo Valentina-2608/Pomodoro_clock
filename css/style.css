@@ -4,30 +4,33 @@
     width:100%;
     height:1000px;
     background-color: #984703;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
+    position: relative;
 }
 
 header{
     width:100%;
     height:100px;
-    display: flex;
-    justify-content: center;
+    position: absolute;
+    top:0px;
+    left:0px;
 }
 
 .caption{
     height:100px;
     width:50%;
+    position: absolute;
+    top:0px;
+    left:25%;
     border-bottom: 2px solid #BFA48D;
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-end;
+    
 }
 
 .logo{
-    height:70%;
+    height:70px;
     width:10%;
+    position: absolute;
+    top:20px;
+    left:50px;
 }
 
 .logo img{
@@ -37,7 +40,12 @@ header{
 .text{
     height:70%;
     width:60%;
+    position: absolute;
+    top:30px;
+    left:150px;
     font-size:50px;
     text-align: center;
     color:#FFD2AD;
 }
+
+
