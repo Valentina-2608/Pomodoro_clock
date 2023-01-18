@@ -4,4 +4,40 @@
     width:100%;
     height:1000px;
     background-color: #984703;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+header{
+    width:100%;
+    height:100px;
+    display: flex;
+    justify-content: center;
+}
+
+.caption{
+    height:100px;
+    width:50%;
+    border-bottom: 2px solid #BFA48D;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+}
+
+.logo{
+    height:70%;
+    width:10%;
+}
+
+.logo img{
+    width:100%;
+}
+
+.text{
+    height:70%;
+    width:60%;
+    font-size:50px;
+    text-align: center;
+    color:#FFD2AD;
 }
