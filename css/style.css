@@ -49,3 +49,12 @@ header{
 }
 
 
+.blocks_fon{
+    width:40%;
+    height:300px;
+    border:1px solid white;
+    border-radius: 10px;;
+    position: absolute;
+    top:170px;
+    left:30%;
+}
