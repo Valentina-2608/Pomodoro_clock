@@ -100,3 +100,43 @@ header{
     background-color:blue;
     opacity:0.3;
 }
+
+
+/* Buttons */
+
+.buttons{
+    width:40%;
+    height:50px;
+    position: absolute;
+    top:180px;
+    left:30%;
+    z-index:14;
+}
+
+#btn_pomodoro{
+    width:22%;
+    margin-left:55px;
+    padding:5px;
+    border-radius: 3px;
+    border:none;
+    font-weight: bold;
+}
+
+#btn_short_break{
+    width:22%;
+    margin-left:27px;
+    padding:5px;
+    border-radius: 3px;
+    border:none;
+    font-weight: bold;
+}
+
+
+#btn_long_break{
+    width:22%;
+    margin-left:27px;
+    padding:5px;
+    border-radius: 3px;
+    border:none;
+    font-weight: bold;
+}
