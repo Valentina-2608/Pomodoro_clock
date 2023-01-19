@@ -119,6 +119,11 @@ header{
     font-size:16px;
 }
 
+#btn_pomodoro:hover{
+    cursor: pointer;
+}
+
+
 #btn_short_break{
     width:22%;
     margin-left:27px;
@@ -128,6 +133,10 @@ header{
     font-weight: bold;
     background-color: #F3AD73;
     font-size:16px;
+}
+
+#btn_short_break:hover{
+    cursor: pointer;
 }
 
 
@@ -140,4 +149,8 @@ header{
     font-weight: bold;
     background-color: #F3AD73;
     font-size:16px;
+}
+
+#btn_long_break:hover{
+    cursor: pointer;
 }
