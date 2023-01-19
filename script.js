@@ -38,3 +38,19 @@ function longBreakChanges(){
     btn_long_break.style.backgroundColor = '#006064';
     btn_pomodoro.style.backgroundColor = '#5DC8CD';
 }
+
+
+
+
+btn_pomodoro.addEventListener('click', pomodoroChanges);
+
+function pomodoroChanges(){
+    fon2.style.display = 'none';
+    fon3.style.display = 'none';
+    main.style.backgroundColor = '#984703';
+    fon1.style.display = 'block';
+    fon1.style.backgroundColor = '#F3AD73';
+    btn_short_break.style.backgroundColor ='#F3AD73';
+    btn_long_break.style.backgroundColor = '#F3AD73';
+    btn_pomodoro.style.backgroundColor = '#F39445';
+}
