@@ -9,7 +9,8 @@ let fon2 = document.querySelector('.fon2');
 let fon3 = document.querySelector('.fon3');
 
 
-btn_short_break.addEventListener('click', changeFonSecond);
+btn_short_break.addEventListener('click', shortBreakChanges);
+
 function changeFonSecond(){
     fon1.style.display = 'none';
     main.style.backgroundColor = '#45538B';
