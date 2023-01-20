@@ -237,11 +237,33 @@ header{
     font-weight:bold;
     border:none;
     border-radius: 5px;
-    background-color:#442500;
-    color:white;
+    background-color:white;
+    color: #984703;
 }
 
 
 #start_pomodoro:hover{
+    cursor:pointer;
+}
+
+
+#pause_pomodoro{
+    width:40%;
+    height:40px;
+    padding:5px;
+    position: absolute;
+    top:0px;
+    left:30%;
+    font-size:20px;
+    font-weight:bold;
+    border:none;
+    border-radius: 5px;
+    background-color:white;
+    color: #984703;
+    display: none;
+}
+
+
+#pause_pomodoro:hover{
     cursor:pointer;
 }
