@@ -107,6 +107,7 @@ header{
 }
 
 
+
 #btn_short_break{
     width:22%;
     margin-left:27px;
@@ -114,9 +115,11 @@ header{
     border-radius: 3px;
     border:none;
     font-weight: bold;
-    background-color: #F3AD73;
     font-size:16px;
+    background-color:#F3AD73;
 }
+
+
 
 #btn_short_break:hover{
     cursor: pointer;
@@ -134,9 +137,8 @@ header{
     font-size:16px;
 }
 
-#btn_long_break:hover{
-    cursor: pointer;
-}
+
+
 
 
 
