@@ -6,7 +6,7 @@ let btn_long_break = document.getElementById('btn_long_break');
 let main = document.querySelector('.main');
 let fon = document.querySelector('.fon');
 
-let timer1 = document.getElementById('timer1');
+let timer1 = document.querySelector('.timer1');
 let timer2 = document.querySelector('.timer2');
 let timer3 = document.querySelector('.timer3');
 
@@ -20,8 +20,6 @@ function shortBreakChanges(){
     btn_short_break.style.backgroundColor = '#6474B3';
     btn_long_break.style.backgroundColor = '#8B9BDC';
     btn_pomodoro.style.backgroundColor = '#8B9BDC';
-
-
     timer1.style.display = 'none';
     timer2.style.display = 'block';
     timer3.style.display = 'none';
@@ -61,10 +59,10 @@ function pomodoroChanges(){
     btn_long_break.style.backgroundColor = '#F3AD73';
     btn_pomodoro.style.backgroundColor = '#F39445';
 
-
+    timer1.style.display = 'block';
     timer2.style.display = 'none';
     timer3.style.display = 'none';
-    timer1.style.display = 'block';
+    
 }
 
 
@@ -203,4 +201,62 @@ function startTimer2(){
 
 
 
+
+/* Timer Long Break */
+let start_long_break = document.getElementById('start_long_break');
+let pause_long_break = document.getElementById('pause_long_break');
+
+start_long_break.addEventListener('click', startTimer3);
+
+function startTimer3(){
+   
+    let timer3_minutes = document.getElementById('timer3_minutes');
+    let timer3_seconds = document.getElementById('timer3_seconds');
+    let time3_start = Number(timer3_minutes.value) * 60 + Number(timer3_seconds.value);
+    start_long_break.style.display = 'none';
+    pause_long_break.style.display = 'block';
+    let myAudio = document.querySelector('#audio');
+
+
+    let updateTime3 = setInterval(function(){
+        let minutes3_Changed = Math.floor(time3_start/60);
+        let seconds3_Changed = time3_start % 60;
+        if (seconds3_Changed < 10 ) {
+            timer3_seconds.value = '0'+ seconds3_Changed;
+        } else{
+            timer3_seconds.value = seconds3_Changed;
+        }
+        if (minutes3_Changed < 10 ) {
+            timer3_minutes.value =  '0'+ minutes3_Changed;
+        } else{
+            timer3_minutes.value =  minutes3_Changed;
+        }
+
+        if(timer3_minutes.value === '00' && timer3_seconds.value === '00'){
+
+            clearInterval(updateTime3);
+            myAudio.play();
+            setTimeout(() =>{
+                start_long_break.style.display = 'block';
+                pause_long_break.style.display = 'none'; 
+                timer3_minutes.value = '5';
+                timer3_seconds.value = '00';
+               
+            }, 3000)   
+
+         }
+        time3_start--;
+
+    }, 1000);
+
+
+      
+    pause_long_break.addEventListener('click', pauseTimer3);
+   
+    function pauseTimer3(){
+        start_long_break.style.display = 'block';
+        pause_long_break.style.display = 'none';
+        clearInterval(updateTime3);
+    }
+}
 
