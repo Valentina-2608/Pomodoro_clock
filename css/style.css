@@ -138,6 +138,9 @@ header{
 }
 
 
+#btn_long_break:hover{
+    cursor: pointer;
+}
 
 
 
@@ -156,7 +159,7 @@ header{
 
 }
 
-#timer1{
+.timer1{
     width:100%;
     height:220px;
     border-radius: 10px;;
@@ -252,10 +255,6 @@ header{
 #pause_pomodoro:hover{
     cursor:pointer;
 }
-
-
-
-
 
 
 
@@ -360,12 +359,12 @@ header{
 
 
 
-.timer_3{
+.timer3{
     width:100%;
     height:220px;
     border-radius: 10px;;
     position: absolute;
-    top:10px;
+    top:0px;
     left:0px;
     z-index:13;
     display: none;
