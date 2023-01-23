@@ -52,7 +52,7 @@ header{
 
 
 /* Blocks_fon */
-.blocks_fon{
+.fon{
     width:40%;
     height:300px;
     border-radius: 10px;;
@@ -60,41 +60,24 @@ header{
     top:170px;
     left:30%;
     z-index:5;
-    background-color: #984703;
-    }
-
-
-.fon1{
-    width:100%;
-    height:300px;
-    border-radius: 10px;;
-    position: absolute;
-    top:0px;
-    left:0px;
-    display: block;
-    background-color: #F3AD73;
+    background-color:#F3AD73;
 }
 
 
-.fon2{
-    width:100%;
-    height:300px;
-    border-radius: 10px;;
-    position: absolute;
-    top:0px;
-    left:0px;
-    display: none;
+.fon_timer1{
+    background-color:#F3AD73;
 }
 
-.fon3{
-    width:100%;
-    height:300px;
-    border-radius: 10px;;
-    position: absolute;
-    top:0px;
-    left:0px;
-    display: none;
+.fon_timer2{
+    background-color: #8B9BDC;
 }
+
+
+.fon_timer3{
+    background-color:#5DC8CD;
+}
+
+
 
 
 /* Buttons */
@@ -171,7 +154,7 @@ header{
 
 }
 
-.timer1{
+#timer1{
     width:100%;
     height:220px;
     border-radius: 10px;;
@@ -368,5 +351,106 @@ header{
 
 
 #pause_short_break:hover{
+    cursor:pointer;
+}
+
+
+
+
+
+.timer_3{
+    width:100%;
+    height:220px;
+    border-radius: 10px;;
+    position: absolute;
+    top:10px;
+    left:0px;
+    z-index:13;
+    display: none;
+}
+
+
+.timer3_elements{
+    width:80%;
+    height:100px;
+    position: absolute;
+    top:30px;
+    left:10%;
+}
+
+
+#timer3_minutes, #timer3_seconds{
+    float:left;
+    height:50px;
+    margin-left:20px;
+    font-size:90px;
+    width:100px;
+    height:80px;
+    background: none;
+    color:black;
+    border:none;
+    text-align:center;
+    font-weight: bold;
+}
+
+.symbol{
+    float:left;
+    margin-left:20px;
+    color:black;
+    font-size:40px;
+    padding-top:10px;
+    font-weight: bold;
+}
+
+
+
+.timer3_buttons{
+    width:100%;
+    height:50px;
+    position: absolute;
+    top:160px;
+    left:0px;
+}
+
+
+#start_long_break{
+    width:40%;
+    height:40px;
+    padding:5px;
+    position: absolute;
+    top:0px;
+    left:30%;
+    font-size:20px;
+    font-weight:bold;
+    border:none;
+    border-radius: 5px;
+    background-color:white;
+    color: #1D7074;
+}
+
+
+#start_long_break:hover{
+    cursor:pointer;
+}
+
+
+#pause_long_break{
+    width:40%;
+    height:40px;
+    padding:5px;
+    position: absolute;
+    top:0px;
+    left:30%;
+    font-size:20px;
+    font-weight:bold;
+    border:none;
+    border-radius: 5px;
+    background-color:white;
+    color:#1D7074;
+    display: none;
+}
+
+
+#pause_long_break:hover{
     cursor:pointer;
 }
