@@ -54,7 +54,7 @@ header{
 /* Blocks_fon */
 .fon{
     width:40%;
-    height:300px;
+    height:35%;
     border-radius: 10px;;
     position: absolute;
     top:170px;
@@ -93,8 +93,8 @@ header{
 
 #btn_pomodoro{
     width:22%;
-    margin-left:55px;
-    padding:5px;
+    margin-left:9%;
+    padding:1%;
     border-radius: 3px;
     border:none;
     font-weight: bold;
@@ -110,8 +110,8 @@ header{
 
 #btn_short_break{
     width:22%;
-    margin-left:27px;
-    padding:5px;
+    margin-left:9%;
+    padding:1%;
     border-radius: 3px;
     border:none;
     font-weight: bold;
@@ -128,8 +128,8 @@ header{
 
 #btn_long_break{
     width:22%;
-    margin-left:27px;
-    padding:5px;
+    margin-left:9%;
+    padding:1%;
     border-radius: 3px;
     border:none;
     font-weight: bold;
@@ -150,7 +150,7 @@ header{
 
 .timers{
     width:30%;
-    height:220px;
+    height:50%;
     border-radius: 10px;;
     position: absolute;
     top:230px;
@@ -161,7 +161,7 @@ header{
 
 .timer1{
     width:100%;
-    height:220px;
+    height:50%;
     border-radius: 10px;;
     position: absolute;
     top:10px;
@@ -188,15 +188,15 @@ header{
     width:100px;
     height:80px;
     background: none;
-    color:black;
     border:none;
+    color:black;
     text-align:center;
     font-weight: bold;
 }
 
 .symbol{
     float:left;
-    margin-left:20px;
+    margin-left:2%;
     color:black;
     font-size:40px;
     padding-top:10px;
@@ -209,7 +209,7 @@ header{
     width:100%;
     height:50px;
     position: absolute;
-    top:150px;
+    top:74%;
     left:0px;
 }
 
@@ -260,7 +260,7 @@ header{
 
 .timer2{
     width:100%;
-    height:220px;
+    height:50%;
     border-radius: 10px;;
     position: absolute;
     top:10px;
@@ -308,7 +308,7 @@ header{
     width:100%;
     height:50px;
     position: absolute;
-    top:150px;
+    top:74%;
     left:0px;
 }
 
@@ -361,7 +361,7 @@ header{
 
 .timer3{
     width:100%;
-    height:220px;
+    height:50%;
     border-radius: 10px;;
     position: absolute;
     top:0px;
@@ -409,7 +409,7 @@ header{
     width:100%;
     height:50px;
     position: absolute;
-    top:160px;
+    top:74%;
     left:0px;
 }
 
