@@ -4,22 +4,19 @@ let btn_pomodoro = document.getElementById('btn_pomodoro');
 let btn_short_break = document.getElementById('btn_short_break');
 let btn_long_break = document.getElementById('btn_long_break');
 let main = document.querySelector('.main');
-let fon1 = document.querySelector('.fon1');
-let fon2 = document.querySelector('.fon2');
-let fon3 = document.querySelector('.fon3');
+let fon = document.querySelector('.fon');
 
-let timer1 = document.querySelector('.timer1');
+let timer1 = document.getElementById('timer1');
 let timer2 = document.querySelector('.timer2');
 let timer3 = document.querySelector('.timer3');
 
 btn_short_break.addEventListener('click', shortBreakChanges);
 
 function shortBreakChanges(){
-    fon1.style.display = 'none';
-    fon3.style.display = 'none';
+    fon.classList.remove('fon_timer1');
+    fon.classList.remove('fon_timer3');
+    fon.classList.add('fon_timer2');
     main.style.backgroundColor = '#45538B';
-    fon2.style.display = 'block';
-    fon2.style.backgroundColor = '#8B9BDC';
     btn_short_break.style.backgroundColor = '#6474B3';
     btn_long_break.style.backgroundColor = '#8B9BDC';
     btn_pomodoro.style.backgroundColor = '#8B9BDC';
@@ -36,14 +33,17 @@ function shortBreakChanges(){
 btn_long_break.addEventListener('click', longBreakChanges);
 
 function longBreakChanges(){
-    fon1.style.display = 'none';
-    fon2.style.display = 'none';
-    fon3.style.display = 'block';
+    fon.classList.remove('fon_timer1');
+    fon.classList.remove('fon_timer2');
+    fon.classList.add('fon_timer3');
     main.style.backgroundColor = '#1D7074';
-    fon3.style.backgroundColor = '#5DC8CD';
     btn_short_break.style.backgroundColor = '#5DC8CD';
     btn_long_break.style.backgroundColor = '#006064';
     btn_pomodoro.style.backgroundColor = '#5DC8CD';
+
+    timer1.style.display = 'none';
+    timer2.style.display = 'none';
+    timer3.style.display = 'block';
 }
 
 
@@ -52,11 +52,11 @@ function longBreakChanges(){
 btn_pomodoro.addEventListener('click', pomodoroChanges);
 
 function pomodoroChanges(){
-    fon2.style.display = 'none';
-    fon3.style.display = 'none';
+    fon.classList.remove('fon_timer2');
+    fon.classList.remove('fon_timer3');
+    fon.classList.add('fon_timer1');
     main.style.backgroundColor = '#984703';
-    fon1.style.display = 'block';
-    fon1.style.backgroundColor = '#F3AD73';
+    
     btn_short_break.style.backgroundColor ='#F3AD73';
     btn_long_break.style.backgroundColor = '#F3AD73';
     btn_pomodoro.style.backgroundColor = '#F39445';
@@ -105,7 +105,7 @@ function startTimer1(){
 
         if(timer1_minutes.value === '00' && timer1_seconds.value === '00'){
 
-            clearInterval(updateTime);
+            clearInterval(updateTime1);
             myAudio.play();
             setTimeout(() =>{
                 start_pomodoro.style.display = 'block';
@@ -113,7 +113,7 @@ function startTimer1(){
                 timer1_minutes.value = '25';
                 timer1_seconds.value = '00';
                
-            }, 3000)   
+            }, 2000)   
 
          }
         time1_start--;
@@ -130,8 +130,6 @@ function startTimer1(){
         clearInterval(updateTime1);
     }
 }
-
-
 
 
 
@@ -168,15 +166,21 @@ function startTimer2(){
 
         if(timer2_minutes.value === '00' && timer2_seconds.value === '00'){
 
-            clearInterval(updateTime);
+            clearInterval(updateTime2);
             myAudio.play();
             setTimeout(() =>{
                 start_short_break.style.display = 'block';
                 pause_short_break.style.display = 'none'; 
                 timer2_minutes.value = '5';
                 timer2_seconds.value = '00';
-               
-            }, 3000)   
+                window.location.href = '#timer1';
+            }, 3000)   ;
+
+            setTimeout(() =>{
+                timer2.style.display = 'none';
+                timer1.style.display = 'block';
+            }, 4000)   
+
 
          }
         time2_start--;
@@ -193,3 +197,10 @@ function startTimer2(){
         clearInterval(updateTime2);
     }
 }
+
+
+
+
+
+
+
