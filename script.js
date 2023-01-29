@@ -1,75 +1,62 @@
 /* Script */
 
-let btn_pomodoro = document.getElementById('btn_pomodoro');
-let btn_short_break = document.getElementById('btn_short_break');
-let btn_long_break = document.getElementById('btn_long_break');
+let btn_pomodoro = document.querySelector('.btn_pomodoro');
+let btn_short_break = document.querySelector('.btn_short_break');
+let btn_long_break = document.querySelector('.btn_long_break');
 let main = document.querySelector('.main');
 let fon = document.querySelector('.fon');
 
-let timer1 = document.querySelector('.timer1');
-let timer2 = document.querySelector('.timer2');
-let timer3 = document.querySelector('.timer3');
+let block_timer1 = document.querySelector('.block_timer1');
+let block_timer2 = document.querySelector('.block_timer2');
+let block_timer3 = document.querySelector('.block_timer3');
 
-btn_short_break.addEventListener('click', shortBreakChanges);
+btn_short_break.addEventListener('click', buttonShortBreakActive);
 
-function shortBreakChanges(){
-    fon.classList.remove('fon_timer1');
-    fon.classList.remove('fon_timer3');
-    fon.classList.add('fon_timer2');
+function buttonShortBreakActive(){
+    block_timer1.style.display = 'none';
+    block_timer2.style.display = 'block';
+    block_timer3.style.display = 'none';
     main.style.backgroundColor = '#45538B';
-    btn_short_break.style.backgroundColor = '#6474B3';
-    btn_long_break.style.backgroundColor = '#8B9BDC';
-    btn_pomodoro.style.backgroundColor = '#8B9BDC';
-    timer1.style.display = 'none';
-    timer2.style.display = 'block';
-    timer3.style.display = 'none';
+    btn_short_break.classList.add('btn_short_break_active');
+    btn_long_break.classList.remove('btn_long_break_active');
+    btn_pomodoro.classList.remove('btn_pomodoro_active');
+   
 }
 
+btn_long_break.addEventListener('click', buttonLongBreakActive);
 
-
-
-btn_long_break.addEventListener('click', longBreakChanges);
-
-function longBreakChanges(){
-    fon.classList.remove('fon_timer1');
-    fon.classList.remove('fon_timer2');
-    fon.classList.add('fon_timer3');
+function buttonLongBreakActive(){
+    block_timer1.style.display = 'none';
+    block_timer2.style.display = 'none';
+    block_timer3.style.display = 'block';
     main.style.backgroundColor = '#1D7074';
-    btn_short_break.style.backgroundColor = '#5DC8CD';
-    btn_long_break.style.backgroundColor = '#006064';
-    btn_pomodoro.style.backgroundColor = '#5DC8CD';
-
-    timer1.style.display = 'none';
-    timer2.style.display = 'none';
-    timer3.style.display = 'block';
+    btn_short_break.classList.remove('btn_short_break_active');
+    btn_long_break.classList.add('btn_long_break_active');
+    btn_pomodoro.classList.remove('btn_pomodoro_active');
 }
 
 
 
+btn_pomodoro.addEventListener('click', buttonPomodoroActive);
 
-btn_pomodoro.addEventListener('click', pomodoroChanges);
-
-function pomodoroChanges(){
-    fon.classList.remove('fon_timer2');
-    fon.classList.remove('fon_timer3');
-    fon.classList.add('fon_timer1');
+function buttonPomodoroActive(){
+    block_timer1.style.display = 'block';
+    block_timer2.style.display = 'none';
+    block_timer3.style.display = 'none';
     main.style.backgroundColor = '#984703';
-    
-    btn_short_break.style.backgroundColor ='#F3AD73';
-    btn_long_break.style.backgroundColor = '#F3AD73';
-    btn_pomodoro.style.backgroundColor = '#F39445';
+    btn_short_break.classList.remove('btn_short_break_active');
+    btn_long_break.classList.remove('btn_long_break_active');
+    btn_pomodoro.classList.add('btn_pomodoro_active');
+    }
 
-    timer1.style.display = 'block';
-    timer2.style.display = 'none';
-    timer3.style.display = 'none';
-    
-}
+
+
+
 
 
 /* Timers */
 
 function startTimer(timer_minutes, timer_seconds, start, pause, number1, number2){
-  
     let time_start = Number(timer_minutes.value) * 60 + Number(timer_seconds.value);
     start.style.display = 'none';
     pause.style.display = 'block';
@@ -99,11 +86,15 @@ function startTimer(timer_minutes, timer_seconds, start, pause, number1, number2
                 pause.style.display = 'none'; 
                 timer_minutes.value = number1
                 timer_seconds.value = number2;
+                
                
             }, 3000)   
+            
+        
 
          }
         time_start--;
+      
 
     }, 1000);
 
@@ -116,6 +107,8 @@ function startTimer(timer_minutes, timer_seconds, start, pause, number1, number2
         pause.style.display = 'none';
         clearInterval(updateTime);
     }
+
+   
 }
 
 
@@ -130,7 +123,7 @@ let timer1_minutes = document.getElementById('timer1_minutes');
 let timer1_seconds = document.getElementById('timer1_seconds');
 
 start_pomodoro.addEventListener('click', () => {
-    startTimer(timer1_minutes, timer1_seconds, start_pomodoro, pause_pomodoro, 5, 0);
+    startTimer(timer1_minutes, timer1_seconds, start_pomodoro, pause_pomodoro, 25, 0);
 });
 
 
@@ -156,9 +149,60 @@ let timer3_seconds = document.getElementById('timer3_seconds');
 
 
 start_long_break.addEventListener('click', () => {
-    startTimer(timer3_minutes, timer3_seconds, start_long_break, pause_long_break, 3, 0);
+    startTimer(timer3_minutes, timer3_seconds, start_long_break, pause_long_break, 15, 0);
 });
 
+
+
+
+
+/* Move to Pomodoro */
+let count2 = 0;
+start_short_break.addEventListener('click', function(){
+    if (btn_short_break.classList.contains('btn_short_break_active')){
+        ++count2;
+  }
+  console.log(count2);
+  if (count2>=1 &&  count2<=3){
+    setTimeout(() => {
+        buttonPomodoroActive();
+        count2 = 0;
+    },69000)
+}
+});
+
+
+
+/* Move to Pomodoro */
+
+start_long_break.addEventListener('click', function(){
+    if (btn_long_break.classList.contains('btn_long_break_active')){
+        setTimeout(() => {
+            buttonPomodoroActive();
+        },69000)
+    }
+});
+
+
+/* Move to Break */
+let count1 = 0;
+start_pomodoro.addEventListener('click', function(){
+    if (btn_pomodoro.classList.contains('btn_pomodoro_active')){
+    ++count1;
+    }
+    console.log(count1);
+    if (count1>=1 && count1<=3){
+        setTimeout(() => {
+            buttonShortBreakActive();
+        },69000)
+    }
+       if (count1 === 4){
+            setTimeout(() => {
+                buttonLongBreakActive();
+                count1 = 0;
+            },69000)
+        }
+})
 
 
 
