@@ -51,35 +51,6 @@ header{
 }
 
 
-/* Blocks_fon */
-.fon{
-    width:40%;
-    height:35%;
-    border-radius: 10px;;
-    position: absolute;
-    top:170px;
-    left:30%;
-    z-index:5;
-    background-color:#F3AD73;
-}
-
-
-.fon_timer1{
-    background-color:#F3AD73;
-}
-
-.fon_timer2{
-    background-color: #8B9BDC;
-}
-
-
-.fon_timer3{
-    background-color:#5DC8CD;
-}
-
-
-
-
 /* Buttons */
 
 .buttons{
@@ -91,24 +62,28 @@ header{
     z-index:14;
 }
 
-#btn_pomodoro{
+.btn_pomodoro{
     width:22%;
     margin-left:9%;
     padding:1%;
     border-radius: 3px;
     border:none;
     font-weight: bold;
+    background: rgba(0, 0, 0, 0);
+    font-size:16px;
+}
+
+.btn_pomodoro:hover{
+    cursor: pointer;
+}
+
+.btn_pomodoro_active{
     background-color: #F39445;
-    font-size:16px;
-}
-
-#btn_pomodoro:hover{
-    cursor: pointer;
 }
 
 
 
-#btn_short_break{
+.btn_short_break{
     width:22%;
     margin-left:9%;
     padding:1%;
@@ -116,29 +91,36 @@ header{
     border:none;
     font-weight: bold;
     font-size:16px;
-    background-color:#F3AD73;
+    background: rgba(0, 0, 0, 0);
+}
+
+.btn_short_break_active{
+    background-color: #45538B;
 }
 
 
-
-#btn_short_break:hover{
+.btn_short_break:hover{
     cursor: pointer;
 }
 
 
-#btn_long_break{
+.btn_long_break{
     width:22%;
     margin-left:9%;
     padding:1%;
     border-radius: 3px;
     border:none;
     font-weight: bold;
-    background-color: #F3AD73;
+    background: rgba(0, 0, 0, 0);
     font-size:16px;
 }
 
 
-#btn_long_break:hover{
+.btn_long_break_active{
+    background-color:#1D7074;
+}
+
+.btn_long_break:hover{
     cursor: pointer;
 }
 
@@ -148,26 +130,45 @@ header{
 /* Block timers */
 
 
+
+
+
+
 .timers{
-    width:30%;
-    height:50%;
+    width:40%;
+    height:35%;
     border-radius: 10px;;
     position: absolute;
-    top:230px;
-    left:35%;
+    top:160px;
+    left:30%;
     z-index:12;
+    background-color: #45538B;
 
 }
 
+.block_timer1{
+    width:100%;
+    height:100%;
+    border-radius: 10px;
+    position: absolute;
+    top:0px;
+    left:0px;
+    z-index:5;
+    background-color: #F3AD73;
+    display:block;
+}
+
+
+
+
 .timer1{
     width:100%;
-    height:50%;
+    height:60%;
     border-radius: 10px;;
     position: absolute;
-    top:10px;
+    top:90px;
     left:0px;
     z-index:13;
-    display: block;
 }
 
 
@@ -176,7 +177,7 @@ header{
     height:100px;
     position: absolute;
     top:20px;
-    left:10%;
+    left:17%;
 }
 
 
@@ -258,24 +259,37 @@ header{
 
 
 
-.timer2{
+.block_timer2{
     width:100%;
-    height:50%;
-    border-radius: 10px;;
+    height:100%;
+    border-radius: 10px;
     position: absolute;
-    top:10px;
+    top:0px;
     left:0px;
-    z-index:13;
+    z-index:5;
+    background-color: #8B9BDC;
     display: none;
 }
 
+
+
+
+.timer2{
+    width:100%;
+    height:60%;
+    border-radius: 10px;;
+    position: absolute;
+    top:90px;
+    left:0px;
+    z-index:13;
+}
 
 .timer2_elements{
     width:80%;
     height:100px;
     position: absolute;
     top:20px;
-    left:10%;
+    left:17%;
 }
 
 
@@ -359,24 +373,37 @@ header{
 
 
 
-.timer3{
+.block_timer3{
     width:100%;
-    height:50%;
-    border-radius: 10px;;
+    height:100%;
+    border-radius: 10px;
     position: absolute;
     top:0px;
     left:0px;
-    z-index:13;
+    z-index:5;
+    background-color:#5DC8CD;
     display: none;
 }
 
+
+
+
+.timer3{
+    width:100%;
+    height:60%;
+    border-radius: 10px;;
+    position: absolute;
+    top:90px;
+    left:0px;
+    z-index:13;
+}
 
 .timer3_elements{
     width:80%;
     height:100px;
     position: absolute;
-    top:30px;
-    left:10%;
+    top:20px;
+    left:17%;
 }
 
 
